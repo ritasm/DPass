@@ -16,6 +16,8 @@
         </excludes>
       </resource>
     </resources>
+    
+    
     <plugins>
       <plugin>
         <artifactId>maven-war-plugin</artifactId>
