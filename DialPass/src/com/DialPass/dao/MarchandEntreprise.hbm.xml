@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 25 f?vr. 2014 21:26:17 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.DialPass.dao.MarchandEntreprise" table="marchand_entreprise" catalog="dialpass">
+        <composite-id name="id" class="com.DialPass.dao.MarchandEntrepriseId">
+            <key-property name="idMarchand" type="int">
+                <column name="id_marchand" />
+            </key-property>
+            <key-property name="nomEntreprise" type="string">
+                <column name="nom_entreprise" length="30" />
+            </key-property>
+            <key-property name="paysEntreprise" type="string">
+                <column name="pays_entreprise" length="30" />
+            </key-property>
+            <key-property name="formeJuridique" type="string">
+                <column name="forme_juridique" length="30" />
+            </key-property>
+            <key-property name="numeroEnreg" type="string">
+                <column name="numero_enreg" length="30" />
+            </key-property>
+            <key-property name="addressEntreprise" type="string">
+                <column name="address_entreprise" length="65535" />
+            </key-property>
+            <key-property name="siteEntreprise" type="string">
+                <column name="site_entreprise" length="100" />
+            </key-property>
+            <key-property name="appEntreprise" type="string">
+                <column name="app_entreprise" length="100" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="marchand" class="com.DialPass.dao.Marchand" update="false" insert="false" fetch="select">
+            <column name="id_marchand" not-null="true" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

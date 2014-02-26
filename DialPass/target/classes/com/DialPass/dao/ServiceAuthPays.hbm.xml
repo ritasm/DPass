@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 25 f?vr. 2014 21:26:17 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.DialPass.dao.ServiceAuthPays" table="service_auth_pays" catalog="dialpass">
+        <composite-id name="id" class="com.DialPass.dao.ServiceAuthPaysId">
+            <key-property name="idTypeservice" type="int">
+                <column name="id_typeservice" />
+            </key-property>
+            <key-property name="idPays" type="int">
+                <column name="id_pays" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="pays" class="com.DialPass.dao.Pays" update="false" insert="false" fetch="select">
+            <column name="id_pays" not-null="true" />
+        </many-to-one>
+        <many-to-one name="typeService" class="com.DialPass.dao.TypeService" update="false" insert="false" fetch="select">
+            <column name="id_typeservice" not-null="true" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

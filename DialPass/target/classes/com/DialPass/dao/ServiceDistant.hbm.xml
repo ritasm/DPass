@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 25 f?vr. 2014 21:26:17 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.DialPass.dao.ServiceDistant" table="service_distant" catalog="dialpass">
+        <composite-id name="id" class="com.DialPass.dao.ServiceDistantId">
+            <key-property name="urlPublic" type="string">
+                <column name="url_public" length="100" />
+            </key-property>
+            <key-property name="urlPrive" type="string">
+                <column name="url_prive" length="100" />
+            </key-property>
+            <key-property name="urlError" type="string">
+                <column name="url_error" length="100" />
+            </key-property>
+            <key-property name="idService" type="int">
+                <column name="id_service" />
+            </key-property>
+        </composite-id>
+        <many-to-one name="service" class="com.DialPass.dao.Service" update="false" insert="false" fetch="select">
+            <column name="id_service" not-null="true" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

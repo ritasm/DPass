@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 25 f?vr. 2014 21:26:17 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.DialPass.dao.CodeAcces" table="code_acces" catalog="dialpass">
+        <id name="idCodeAcces" type="java.lang.Integer">
+            <column name="id_code_acces" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="marchand" class="com.DialPass.dao.Marchand" fetch="select">
+            <column name="id_codeservice" not-null="true" />
+        </many-to-one>
+        <property name="codeAcces" type="string">
+            <column name="code_acces" length="30" not-null="true" />
+        </property>
+        <property name="validite" type="int">
+            <column name="validite" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 25 f?vr. 2014 21:26:17 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.DialPass.dao.Marchand" table="marchand" catalog="dialpass">
+        <id name="idMarchand" type="java.lang.Integer">
+            <column name="id_marchand" />
+            <generator class="identity" />
+        </id>
+        <property name="nomMarchand" type="string">
+            <column name="nom_marchand" length="30" not-null="true" />
+        </property>
+        <property name="prenomMarchand" type="string">
+            <column name="prenom_marchand" length="30" not-null="true" />
+        </property>
+        <property name="titreMarchand" type="string">
+            <column name="titre_marchand" length="30" not-null="true" />
+        </property>
+        <property name="emailMarchand" type="string">
+            <column name="email_marchand" length="100" not-null="true" />
+        </property>
+        <property name="passwordMarchand" type="string">
+            <column name="password_marchand" length="30" not-null="true" />
+        </property>
+        <property name="situationProMarchand" type="string">
+            <column name="situation_pro_marchand" length="30" not-null="true" />
+        </property>
+        <property name="dateNMarchand" type="date">
+            <column name="date_n_marchand" length="10" not-null="true" />
+        </property>
+        <property name="paysMarchand" type="string">
+            <column name="pays_marchand" length="30" not-null="true" />
+        </property>
+        <property name="addressMarchand" type="string">
+            <column name="address_marchand" length="65535" not-null="true" />
+        </property>
+        <property name="nationalite" type="string">
+            <column name="nationalite" length="30" not-null="true" />
+        </property>
+        <property name="telMarchand" type="string">
+            <column name="tel_marchand" length="30" not-null="true" />
+        </property>
+        <property name="siteApp" type="boolean">
+            <column name="site_app" not-null="true" />
+        </property>
+        <set name="codeAcceses" table="code_acces" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_codeservice" not-null="true" />
+            </key>
+            <one-to-many class="com.DialPass.dao.CodeAcces" />
+        </set>
+        <set name="marchandEntreprises" table="marchand_entreprise" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_marchand" not-null="true" />
+            </key>
+            <one-to-many class="com.DialPass.dao.MarchandEntreprise" />
+        </set>
+        <set name="marchandAssociations" table="marchand_association" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_marchand" not-null="true" />
+            </key>
+            <one-to-many class="com.DialPass.dao.MarchandAssociation" />
+        </set>
+    </class>
+</hibernate-mapping>

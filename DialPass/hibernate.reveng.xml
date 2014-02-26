@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+  <table-filter match-catalog="dialpass" match-name="abonnee"/>
+  <table-filter match-catalog="dialpass" match-name="abonnement"/>
+  <table-filter match-catalog="dialpass" match-name="code_acces"/>
+  <table-filter match-catalog="dialpass" match-name="code_service"/>
+  <table-filter match-catalog="dialpass" match-name="marchand"/>
+  <table-filter match-catalog="dialpass" match-name="marchand_association"/>
+  <table-filter match-catalog="dialpass" match-name="marchand_entreprise"/>
+  <table-filter match-catalog="dialpass" match-name="paiement"/>
+  <table-filter match-catalog="dialpass" match-name="pays"/>
+  <table-filter match-catalog="dialpass" match-name="service"/>
+  <table-filter match-catalog="dialpass" match-name="service_auth_pays"/>
+  <table-filter match-catalog="dialpass" match-name="service_distant"/>
+  <table-filter match-catalog="dialpass" match-name="type_service"/>
+</hibernate-reverse-engineering>

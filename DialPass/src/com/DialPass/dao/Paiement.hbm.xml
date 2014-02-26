@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 25 f?vr. 2014 21:26:17 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.DialPass.dao.Paiement" table="paiement" catalog="dialpass">
+        <id name="idPaiement" type="java.lang.Integer">
+            <column name="id_paiement" />
+            <generator class="identity" />
+        </id>
+        <property name="idPays" type="int">
+            <column name="id_pays" not-null="true" />
+        </property>
+        <property name="serviceOp" type="string">
+            <column name="service_op" length="30" not-null="true" />
+        </property>
+        <property name="numeroOp" type="string">
+            <column name="numero_op" length="30" not-null="true" />
+        </property>
+        <property name="gainOpe" type="double">
+            <column name="gain_ope" precision="22" scale="0" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

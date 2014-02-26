@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 25 f?vr. 2014 21:26:17 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.DialPass.dao.CodeService" table="code_service" catalog="dialpass">
+        <id name="idCodeservice" type="java.lang.Integer">
+            <column name="id_codeservice" />
+            <generator class="identity" />
+        </id>
+        <property name="codeservice" type="string">
+            <column name="codeservice" length="100" not-null="true" />
+        </property>
+        <set name="services" table="service" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_codeservice" not-null="true" />
+            </key>
+            <one-to-many class="com.DialPass.dao.Service" />
+        </set>
+    </class>
+</hibernate-mapping>

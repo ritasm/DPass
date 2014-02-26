@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 25 f?vr. 2014 21:26:17 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+<!-- Generated 25 f?vr. 2014 21:26:17 by Hibernate Tools 3.4.0.CR1 -->
+    <class name="com.DialPass.dao.Abonnee" table="abonnee" catalog="dialpass">
+        <id name="idAbonnee" type="java.lang.Integer">
+            <column name="id_abonnee" />
+            <generator class="identity" />
+        </id>
+        <property name="nomAbonnee" type="string">
+            <column name="nom_abonnee" length="30" not-null="true" />
+        </property>
+        <property name="telAbonnee" type="string">
+            <column name="tel_abonnee" length="30" not-null="true" />
+        </property>
+        <property name="emailAbonnee" type="string">
+            <column name="email_abonnee" length="100" not-null="true" />
+        </property>
+        <property name="passwordAbonnee" type="string">
+            <column name="password_abonnee" length="100" not-null="true" />
+        </property>
+        <set name="abonnements" table="abonnement" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_abonnee" not-null="true" />
+            </key>
+            <one-to-many class="com.DialPass.dao.Abonnement" />
+        </set>
+    </class>
+</hibernate-mapping>

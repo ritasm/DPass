@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost/dialpass</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="current_session_context_class">thread</property>
+        
+        <!-- Echo all executed Sql to stdout -->
+        <property name="show_sql">true</property>
+        <!-- update BD -->
+   		<property name="hbm2ddl.auto">update</property>
+   		<!-- Fichier de mapping  -->
+   		<mapping resource="com/DialPass/dao/Abonnee.hbm.xml"/>
+   		<mapping resource="com/DialPass/dao/Abonnement.hbm.xml"/>
+   		<mapping resource="com/DialPass/dao/AbonnementId.hbm.xml"/>
+   		<mapping resource="com/DialPass/dao/CodeAccess.hbm.xml"/>
+   		<mapping resource="com/DialPass/dao/CodeService.hbm.xml"/>
+   		<mapping resource="com/DialPass/dao/Marchand.hbm.xml"/>
+   		<mapping resource="com/DialPass/dao/MarchandAssociation.hbm.xml"/>
+   		<mapping resource="com/DialPass/dao/MarchandAssociationId.hbm.xml"/>
+        <mapping resource="com/DialPass/dao/MarchandEntreprise.hbm.xml"/>
+   		<mapping resource="com/DialPass/dao/MarchandEntrepriseId.hbm.xml"/>
+   		<mapping resource="com/DialPass/dao/Paiement.hbm.xml"/>
+   		<mapping resource="com/DialPass/dao/Pays.hbm.xml"/>
+   		<mapping resource="com/DialPass/dao/Service.hbm.xml"/>
+   		<mapping resource="com/DialPass/dao/ServiceAuthPays.hbm.xml"/>
+   		<mapping resource="com/DialPass/dao/ServiceAuthPaysId.hbm.xml"/>
+   		<mapping resource="com/DialPass/dao/ServiceDistant.hbm.xml"/>
+   		<mapping resource="com/DialPass/dao/ServiceDistantId.hbm.xml"/>
+   		<mapping resource="com/DialPass/dao/TypeService.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>

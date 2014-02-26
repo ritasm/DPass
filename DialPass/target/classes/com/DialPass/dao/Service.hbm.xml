@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 25 f?vr. 2014 21:26:17 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="com.DialPass.dao.Service" table="service" catalog="dialpass">
+        <id name="idService" type="java.lang.Integer">
+            <column name="id_service" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="codeService" class="com.DialPass.dao.CodeService" fetch="select">
+            <column name="id_codeservice" not-null="true" />
+        </many-to-one>
+        <many-to-one name="typeService" class="com.DialPass.dao.TypeService" fetch="select">
+            <column name="id_typeservice" not-null="true" />
+        </many-to-one>
+        <property name="nomService" type="string">
+            <column name="nom_service" length="30" not-null="true" />
+        </property>
+        <property name="codeTest" type="string">
+            <column name="code_test" length="30" not-null="true" />
+        </property>
+        <property name="valide" type="boolean">
+            <column name="valide" not-null="true" />
+        </property>
+        <property name="cout" type="int">
+            <column name="cout" not-null="true" />
+        </property>
+        <set name="abonnements" table="abonnement" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_service" not-null="true" />
+            </key>
+            <one-to-many class="com.DialPass.dao.Abonnement" />
+        </set>
+        <set name="serviceDistants" table="service_distant" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="id_service" not-null="true" />
+            </key>
+            <one-to-many class="com.DialPass.dao.ServiceDistant" />
+        </set>
+    </class>
+</hibernate-mapping>
